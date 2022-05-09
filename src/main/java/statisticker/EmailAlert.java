@@ -3,7 +3,7 @@ package statisticker;
 // Email alert class implemets Ialerter interface
 public class EmailAlert implements IAlerter {
 	
-	// boolean value
+	// status boolean variable
 	public boolean emailSent;
 
 	// implemented interface method
