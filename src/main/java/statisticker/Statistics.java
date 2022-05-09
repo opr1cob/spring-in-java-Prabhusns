@@ -1,19 +1,29 @@
 package statisticker;
 import java.util.List;
 import java.util.OptionalDouble;
-public class Statistics
-{
-    public static Stats getStatistics(List<Float> numbers) {
-    	Stats stats = new Stats();
-	OptionalDouble avg = numbers.stream().mapToDouble((a) -> a).average();
-	stats.setAverage(avg.isPresent() ? avg.getAsDouble() : Float.NaN);
-	OptionalDouble min = numbers.stream().mapToDouble((a) -> a).min();
-	stats.setMin(min.isPresent() ? min.getAsDouble() : Float.NaN);
-	OptionalDouble max = numbers.stream().mapToDouble((a) -> a).max();
-	stats.setMax(max.isPresent() ? max.getAsDouble() : Float.NaN);
-	return stats;
+public class Statistics {
+    // Stats with avg, max, min values
+    public static Stats getStatistics(List < Float > numbers) {
+        Stats stats = new Stats();
+        // manipulating avg value using streams
+        OptionalDouble avg = numbers.stream().mapToDouble((a) - > a).average();
+        // checking avg value is present else mapping Nan
+        stats.setAverage(avg.isPresent() ? avg.getAsDouble() : Float.NaN);
+        // manipulating min value using streams
+
+        OptionalDouble min = numbers.stream().mapToDouble((a) - > a).min();
+        // checking avg value is present else mapping Nan
+        stats.setMin(min.isPresent() ? min.getAsDouble() : Float.NaN);
+        // manipulating max value using streams
+
+        OptionalDouble max = numbers.stream().mapToDouble((a) - > a).max();
+
+        // checking avg value is present else mapping Nan
+        stats.setMax(max.isPresent() ? max.getAsDouble() : Float.NaN);
+        return stats;
     }
-	// static inner class 
+	
+    // created static inner class based on test case
     static class Stats {
         double min; //minimum value
         double average; // avg value on the list
