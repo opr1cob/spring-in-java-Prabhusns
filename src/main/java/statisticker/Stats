@@ -1,0 +1,30 @@
+package statisticker;
+
+//POJO Class
+
+public class Stats {
+	double min; //minimum value
+	double average; // avg value on the list
+	double max; // max value 
+  
+  // getter and setter
+	public double getMin() {
+		return min;
+	}
+	public void setMin(double min) {
+		this.min = min;
+	}
+	public double getAverage() {
+		return average;
+	}
+	public void setAverage(double average) {
+		this.average = average;
+	}
+	public double getMax() {
+		return max;
+	}
+	public void setMax(double max) {
+		this.max = max;
+	}
+  
+}
