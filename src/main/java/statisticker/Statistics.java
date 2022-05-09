@@ -5,17 +5,15 @@ public class Statistics
 {
     public static Stats getStatistics(List<Float> numbers) {
     	Stats stats = new Stats();
-    	OptionalDouble avg =  numbers.stream().mapToDouble((a) -> a).average();
-    	stats.setAverage(avg.getAsDouble());
-    	
-    	OptionalDouble min =  numbers.stream().mapToDouble((a) -> a).min();
-    	stats.setMin(min.getAsDouble());
-    	
-    	OptionalDouble max =  numbers.stream().mapToDouble((a) -> a).max();
-    	stats.setMax(max.getAsDouble());
-    	
-		return stats;
+	OptionalDouble avg = numbers.stream().mapToDouble((a) -> a).average();
+	stats.setAverage(avg.isPresent() ? avg.getAsDouble() : Float.NaN);
+	OptionalDouble min = numbers.stream().mapToDouble((a) -> a).min();
+	stats.setMin(min.isPresent() ? min.getAsDouble() : Float.NaN);
+	OptionalDouble max = numbers.stream().mapToDouble((a) -> a).max();
+	stats.setMax(max.isPresent() ? max.getAsDouble() : Float.NaN);
+	return stats;
     }
+	// static inner class 
     static class Stats {
         double min; //minimum value
         double average; // avg value on the list
