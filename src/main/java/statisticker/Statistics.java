@@ -10,14 +10,11 @@ public class Statistics {
         // checking avg value is present else mapping Nan
         stats.setAverage(avg.isPresent() ? avg.getAsDouble() : Float.NaN);
         // manipulating min value using streams
-
         OptionalDouble min = numbers.stream().mapToDouble((a) - > a).min();
         // checking avg value is present else mapping Nan
         stats.setMin(min.isPresent() ? min.getAsDouble() : Float.NaN);
         // manipulating max value using streams
-
         OptionalDouble max = numbers.stream().mapToDouble((a) - > a).max();
-
         // checking avg value is present else mapping Nan
         stats.setMax(max.isPresent() ? max.getAsDouble() : Float.NaN);
         return stats;
