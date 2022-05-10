@@ -27,12 +27,10 @@ public class StatsChecker {
 		if (maxVal > maxThreshold) {
 			// loping Ialerter interface to trigger alerts
 			for (IAlerter alert : alerters) {
-				// check the object instance based on classname
-				if (alert.getClass().getSimpleName().equalsIgnoreCase(EmailAlert.class.getSimpleName())) {
-					// trigger alert
+				// check the object instance based on class
+				if (alert instanceof EmailAlert) {
 					((EmailAlert) alert).triggerAlert();
-				} else if (alert.getClass().getSimpleName().equalsIgnoreCase(LEDAlert.class.getSimpleName())) {
-					// trigger alert
+				} else if (alert instanceof LEDAlert) {
 					((LEDAlert) alert).triggerAlert();
 				}
 			}
